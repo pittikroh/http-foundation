@@ -1594,7 +1594,7 @@ class Request
      * Note that if you use this method, you should send the "Vary: Accept" header
      * in the response to prevent any issues with intermediary HTTP caches.
      */
-    public function getPreferredFormat(?string $default = 'html'): ?string
+    public function getPreferredFormat(string $default = 'html'): string
     {
         if (null !== $this->preferredFormat || null !== $this->preferredFormat = $this->getRequestFormat(null)) {
             return $this->preferredFormat;
@@ -1958,7 +1958,7 @@ class Request
      * Returns the prefix as encoded in the string when the string starts with
      * the given prefix, null otherwise.
      */
-    private function getUrlencodedPrefix(string $string, string $prefix): ?string
+    private function getUrlencodedPrefix(string $string, string $prefix): string
     {
         if (0 !== strpos(rawurldecode($string), $prefix)) {
             return null;
